@@ -6,10 +6,10 @@ import Aura from '@primeuix/themes/aura';
 
 // Register components
 import Button from 'primevue/button';
-import Dropdown from 'primevue/dropdown';
+import Select from 'primevue/select';
 import Panel from 'primevue/panel';
 import InputText from 'primevue/inputtext';
-import Calendar from 'primevue/calendar';
+import DatePicker from 'primevue/datepicker';
 
 const app = createApp(App);
 
@@ -25,9 +25,9 @@ app.use(PrimeVue, {
 
 // Register components
 app.component('Button', Button);
-app.component('Dropdown', Dropdown);
+app.component('Select', Select);
 app.component('Panel', Panel);
 app.component('InputText', InputText);
-app.component('Calendar', Calendar);
+app.component('DatePicker', DatePicker);
 
 app.mount('#app');

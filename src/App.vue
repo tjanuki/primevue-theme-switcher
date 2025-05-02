@@ -8,9 +8,11 @@ const selectedColor = ref('blue');
 // Available theme colors
 const colorOptions = [
   { name: 'Blue', value: 'blue' },
+  { name: 'Indigo', value: 'indigo' },
   { name: 'Green', value: 'green' },
   { name: 'Purple', value: 'purple' },
   { name: 'Amber', value: 'amber' },
+  { name: 'Orange', value: 'orange' },
   { name: 'Teal', value: 'teal' }
 ];
 
@@ -28,6 +30,19 @@ const colorPalettes = {
     800: '#075985',
     900: '#0c4a6e',
     950: '#082f49'
+  },
+  indigo: {
+    50: '#eef2ff',
+    100: '#e0e7ff',
+    200: '#c7d2fe',
+    300: '#a5b4fc',
+    400: '#818cf8',
+    500: '#6366f1',
+    600: '#4f46e5',
+    700: '#4338ca',
+    800: '#3730a3',
+    900: '#312e81',
+    950: '#1e1a78'
   },
   green: {
     50: '#f0fdf4',
@@ -67,6 +82,19 @@ const colorPalettes = {
     800: '#92400e',
     900: '#78350f',
     950: '#451a03'
+  },
+  orange: {
+    50: '#fff7ed',
+    100: '#ffedd5',
+    200: '#fed7aa',
+    300: '#fdba74',
+    400: '#fb923c',
+    500: '#f97316',
+    600: '#ea580c',
+    700: '#c2410c',
+    800: '#9a3412',
+    900: '#7c2d12',
+    950: '#451400'
   },
   teal: {
     50: '#f0fdfa',
@@ -136,7 +164,7 @@ onMounted(() => {
     <div class="theme-controls">
       <div class="color-selector">
         <label>Theme Color:</label>
-        <Dropdown v-model="selectedColor" :options="colorOptions" optionLabel="name"
+        <Select v-model="selectedColor" :options="colorOptions" optionLabel="name"
                   optionValue="value" @change="changeColor" />
       </div>
 
@@ -156,7 +184,7 @@ onMounted(() => {
               <Button label="Primary" />
               <Button label="Secondary" severity="secondary" />
               <Button label="Success" severity="success" />
-              <Button label="Warning" severity="warning" />
+              <Button label="Warning" severity="warn" />
               <Button label="Danger" severity="danger" />
               <Button label="Info" severity="info" />
             </div>
@@ -166,7 +194,7 @@ onMounted(() => {
             <h3>Input Fields</h3>
             <div class="input-group">
               <InputText placeholder="Text Input" />
-              <Calendar placeholder="Date Input" />
+              <DatePicker placeholder="Date Input" />
             </div>
           </div>
         </div>
